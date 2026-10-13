@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+@theme {
+  /* Harmonized palette based on Michael Ovalles photo */
+  --color-olive-950: #080d0b;
+  --color-olive-900: #0d1310;
+  --color-olive-850: #111a16;
+  --color-olive-800: #15201b;
+  --color-olive-750: #192721;
+  --color-olive-700: #25352e;
+  --color-olive-600: #344840;
+
+  /* Warm Champagne-Khaki Gold Accent from photo lighting */
+  --color-champagne-300: #f3ebd0;
+  --color-champagne-400: #e7dab0;
+  --color-champagne-500: #d8c58f;
+  --color-champagne-600: #c4b077;
+  --color-champagne-hover: #ebe0bc;
+
+  /* Sage Green Accent from photo jacket */
+  --color-sage-400: #a3c4a8;
+  --color-sage-500: #84a98c;
+  --color-sage-600: #688b70;
+
+  /* Emerald QA accents */
+  --color-emerald-400: #4ade80;
+  --color-emerald-500: #22c55e;
+  --color-mint-400: #5eead4;
+
+  /* Stone & Silver Text */
+  --color-stone-light: #e2e8f0;
+  --color-stone-muted: #94a3b8;
+  --color-stone-dim: #718096;
+
+  --font-sans: "Nunito", system-ui, -apple-system, sans-serif;
+  --font-heading: "Inter", system-ui, sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-mono: "Fira Code", monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #0d1310;
+    color: #e2e8f0;
+    font-family: "Nunito", system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background-color: #d8c58f;
+    color: #0d1310;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    color: #f8fafc;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0d1310;
+}
+::-webkit-scrollbar-thumb {
+  background: #25352e;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d8c58f;
+}
