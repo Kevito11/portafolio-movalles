@@ -105,10 +105,11 @@ const Navbar = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-[#25352e] text-xs font-mono text-[#cbd5e1] hover:border-[#d8c58f] hover:text-[#d8c58f] bg-[#15201b]/80 transition-all cursor-pointer"
-              title="Cambiar idioma / Switch language"
+              title={language === 'en' ? 'Cambiar a Español' : 'Switch to English'}
+              aria-label={language === 'en' ? 'Cambiar a Español' : 'Switch to English'}
             >
               <Globe size={14} className="text-[#84a98c]" />
-              <span className="font-semibold uppercase">{language === 'es' ? 'EN' : 'ES'}</span>
+              <span className="font-semibold uppercase">{language === 'en' ? 'ES' : 'EN'}</span>
             </motion.button>
 
             {/* Resume Button */}
@@ -183,6 +184,20 @@ const Navbar = () => {
                       <span className="text-[#d8c58f]/70 text-xs">→</span>
                     </a>
                   ))}
+
+                  <button
+                    onClick={toggleLanguage}
+                    className="flex items-center justify-between font-mono text-sm text-[#cbd5e1] active:text-[#d8c58f] hover:text-[#d8c58f] py-3 border-b border-[#25352e]/50 cursor-pointer text-left w-full"
+                    aria-label="Toggle language"
+                  >
+                    <span className="flex items-center gap-2">
+                      <Globe size={16} className="text-[#84a98c]" />
+                      <span>{language === 'en' ? 'Idioma' : 'Language'}</span>
+                    </span>
+                    <span className="font-bold text-xs px-2.5 py-1 rounded-md border border-[#25352e] text-[#d8c58f] bg-[#15201b]">
+                      {language === 'en' ? 'Cambiar a Español' : 'Switch to English'}
+                    </span>
+                  </button>
 
                   <a
                     href="/CV_Michael_Ovalles.pdf"
